@@ -1,7 +1,7 @@
 package DSA.linkedLists;
 
 public class MaximumAndMinimum {
-	public static int findMax(Node head) {
+	public static void findMax(Node head) {
 		int max = head.data;
 		Node curr = head;
 		while(curr != null) {
@@ -10,9 +10,9 @@ public class MaximumAndMinimum {
 				curr = curr.next;
 			}
 		}
-		return max;
+		System.out.println("Maximum Element in the given linked list is:"+max);
 	}
-	public static int findMin(Node head) {
+	public static void findMin(Node head) {
 		int min = head.data;
 		Node curr = head;
 		while(curr != null) {
@@ -21,7 +21,8 @@ public class MaximumAndMinimum {
 				curr = curr.next;
 			}
 		}
-		return min;
+		System.out.println("Minimum Element in the given linked list is:"+min);
+
 	}
 
 	public static void main(String[] args) {
@@ -30,9 +31,8 @@ public class MaximumAndMinimum {
         head.next.next = new Node (30);
         head.next.next.next = new Node (40);
         head.next.next.next.next = new Node (50);
-        System.out.println("Maximum element is present in the linked list:"+findMax(head));
-        System.out.println("minimum element is present in the linked list:"+findMin(head));
-
+		findMax(head);
+		findMin(head);
 	}
 
 }
