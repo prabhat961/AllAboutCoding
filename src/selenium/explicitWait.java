@@ -1,6 +1,7 @@
 package selenium;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -20,11 +21,11 @@ public class explicitWait {
         driver.manage().window().maximize();
         driver.get("https://www.google.com/");
         WebElement revealed = driver.findElement(By.id("APjFqb"));
+        Actions act = new Actions(driver);
         //Explicit Wait
         Wait<WebDriver> wait = new WebDriverWait(driver, Duration.ofSeconds(5));
         WebElement srchBox = driver.findElement(By.id("APjFqb"));
-        srchBox.sendKeys("Selenium");
-        new Actions(driver).keyDown("ENTER").perform();
+        act.sendKeys(Keys.ENTER).perform();
 
     }
 
