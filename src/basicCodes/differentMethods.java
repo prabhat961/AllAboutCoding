@@ -45,6 +45,41 @@ public class differentMethods {
         System.out.println("not a leap");
 }
 
+    public static void isPrime(int num){
+        boolean flag = false;
+        for (int i = 2; i <= num / 2; ++i) {
+            // condition for non prime number
+            if (num % i == 0) {
+                flag = true;
+                break;
+            }
+        }
+
+        if (!flag)
+            System.out.println(num + " is a prime number.");
+        else
+            System.out.println(num + " is not a prime number.");
+    }
+
+    public static void printPrimeInRange(int lo, int hi){
+        while (lo < hi) {
+            boolean flag = false;
+            for(int i = 2; i <= lo/2; ++i) {
+                // condition for nonprime number
+                if(lo % i == 0) {
+                    flag = true;
+                    break;
+                }
+            }
+            if (!flag && lo != 0 && lo != 1)
+                System.out.print(lo + " ");
+
+            ++lo;
+        }
+    }
+
+
+
     public static void main(String[] args) {
 
     }
