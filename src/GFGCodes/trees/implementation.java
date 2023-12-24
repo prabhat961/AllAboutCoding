@@ -45,6 +45,15 @@ public class implementation {
         else
             return  leftHieght + 1;
     }
+
+    public static int printLeafCount(Node root){
+        if (root == null)
+            return 0;
+        if (root.left == null && root.right == null)
+            return 1;
+        else
+            return printLeafCount(root.left)+printLeafCount(root.right);
+    }
     public static void main(String[] args) {
         Node root = new Node(10);
         root.left = new Node(20);
@@ -63,6 +72,7 @@ public class implementation {
         inOrderTraversal(root);
         System.out.println();
         System.out.println("Hieght of the given tree is:"+printHieght(root));
+        System.out.println("Total Count of leaves in this tree is:"+printLeafCount(root));
     }
 
 }
